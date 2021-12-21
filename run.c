@@ -12,12 +12,12 @@ int square_perimeter(const int l);
 int rectangular_area(const int b, const int h);
 int rectangular_perimeter(const int b, const int h);
 
-int total_sum(int iter, int** nums)
+int total_sum(int iter, int *nums)
 {
     int sum = 0;
-    for (size_t i = 1; i < iter; i++)
+    for (size_t i = 0; i < iter; i++)
     {
-        sum = sum + *nums[i];
+        sum = sum + nums[i];
     }
     return sum;
 }
@@ -50,15 +50,18 @@ int main(int argc, char **argv)
     // }
     // int result = total_sum(argc-1, numbers);
 
+    puts("> Simple SUM of input numbers:");
     result = dummy_sum(numbers[0], numbers[1]);
-    printf("Somma 2 numeri: %d\n", result);
-    puts("CALCOLO GEOMETRICO DEL QUADRATO:");
-    stampa("Area: %d\n", square_area(numbers[0]));
-    stampa("Perimetro: %d\n", square_perimeter(numbers[0]));
+    printf("\tSum 1st two numbers: %d\n", result);
+    stampa("\tTOTAL SUM: %d\n", total_sum(argc-1, numbers));
+
+    puts("\n> Geometric SQUARE basic values:");
+    stampa("\tArea: %d\n", square_area(numbers[0]));
+    stampa("\tPerimeter: %d\n", square_perimeter(numbers[0]));
     
-    puts("CALCOLO GEOMETRICO DEL RETTANGOLO:");
-    stampa("Area: %d\n", rectangular_area(numbers[0], numbers[1]));
-    stampa("Perimetro: %d\n", rectangular_perimeter(numbers[0], numbers[1]));
+    puts("\n> Geometric RECTANGULAR basic values:");
+    stampa("\tArea: %d\n", rectangular_area(numbers[0], numbers[1]));
+    stampa("\tPerimeter: %d\n", rectangular_perimeter(numbers[0], numbers[1]));
     
 
     return 0;
